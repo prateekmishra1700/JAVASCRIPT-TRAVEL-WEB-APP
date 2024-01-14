@@ -1,0 +1,437 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<style>
+		body{
+	background:linear-gradient(to bottom right, #00cc00, #3399ff); 
+	background-size: 100% 100%;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	margin: 0;
+	padding: 0;
+}
+.heading{
+	position: relative;
+	text-align: center;
+	top:50px;
+	color: white;
+	font-size: 70px;
+}
+.main{
+  overflow: hidden;
+  position: fixed;
+  background-color: rgba(135,206,250,0.4);
+  top: 0;
+  width: 100vw;
+  height: 8vh;
+  max-width: 1550px;
+}
+
+ul{
+  list-style-type: none;
+  margin-top: 20px;
+  margin-right: 50px;
+}
+
+ul li{
+  display: inline;
+}
+
+.list{
+  position: fixed;
+  display: block;
+  top: 9px;
+  float: left;
+}
+
+.list li.logo img{
+  position: relative;
+  float: left;
+  top: -20px;
+  margin-left: -5%;
+  -webkit-animation:spin 4s linear infinite;
+  -moz-animation:spin 4s linear infinite;
+  animation:spin 4s linear infinite;
+
+}
+.search{
+  display: inline;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+}
+
+.search input[type=text]{
+  position: relative;
+  float: left;
+  top:-18px;
+  left: 5%;
+  padding: 6px;
+  font-size: 15px;
+  border-radius: 15px;
+  border: 1px solid #0000ff;
+  transition: 0.6s ease;
+}
+
+.search input[type=text]:hover{
+  background-color: #dcdcdc;
+}
+
+
+.list input[type=image]{
+  position: relative;
+  float: right;
+  top:-50px;
+  left: 2%;
+  margin-left: 20%; 
+  padding: 4px;
+  border-radius: 10px;
+  border: 1px solid #00f;
+  transition: 0.6s ease;
+  background-color: #fff;
+}
+
+.list input[type=image]:hover{
+  background-color: #739ac5;
+}
+
+.list2{
+  position: relative;
+  top: -20px;
+  float: right;
+}
+
+.list2 li a{
+  text-decoration: none;
+  color: #fff;
+  padding: 5px 20px;
+  border: 1px solid transparent;
+  transition: 0.9s ease;
+}
+
+.list2 li a:hover{
+  background-color: #fff;
+  color: #000;
+
+}
+
+.list2 li.active-menu a{
+  background-color: #fff;
+  color: #000;
+}
+
+.container{
+	overflow: auto;
+	width: 1450px;
+	margin: 70px auto 0;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+.container .box{
+	overflow: hidden;
+	width: 320px;
+	height: 270px;
+	margin:20px;
+	box-sizing: border-box;
+	display: inline-block;
+	transition: transform 2s;
+}
+.container .box .imgBox{
+	overflow: hidden;
+}
+.container .box .imgBox img{
+	max-width: 100%;
+	height: 300px;
+	transition: transform 2s;
+}
+.container .box .name-text{
+	position: absolute;
+	top: 400px;
+	color: white;
+	font-family: Helvetica;
+	transition: 0.6s ease;
+}
+.container .box .name-text a{
+	position: relative;
+	display: none;
+	border: 1px solid #fff;
+	padding: 5px 9px;
+	top: -20px;
+	color: #fff;
+	text-decoration: none;
+	transition: 0.6s ease;
+	text-align: center;
+}
+.container .box:hover .imgBox img{
+	overflow: hidden;
+	transform: scale(1.2);
+}
+.container .box:hover .name-text a{
+	display: block;
+	top: -20px;
+}
+.container .box .name-text a:hover{
+	background-color: #fff;
+    color: #000;
+}
+.container .box:hover .top1{
+	top: 380px;
+}
+.container .box .name-pading1{
+	left: 190px;
+}
+.container .box .name-pading2{
+	left: 520px;
+}
+.container .box .name-pading3{
+	left: 880px;
+}
+.container .box .name-pading4{
+	left: 1240px;
+}
+.container .box:hover .top2{
+	top: 680px;
+}
+.container .box .name-pading5{
+	top: 710px;
+	left: 180px;
+}
+.container .box .name-pading6{
+	top: 710px;
+	left: 500px;
+}
+.container .box .name-pading7{
+	top: 710px;
+	left: 890px;
+}
+.container .box .name-pading8{
+	top: 710px;
+	left: 1230px;
+}
+.container .box:hover .top3{
+	top: 990px;
+}
+.container .box .name-pading9{
+	top: 1020px;
+	left: 160px;
+}
+.container .box .name-pading10{
+	top: 1020px;
+	left: 500px;
+}
+.container .box .name-pading11{
+	top: 1020px;
+	left: 870px;
+}
+.container .box .name-pading12{
+	top: 1020px;
+	left: 1240px;
+}
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+	</style>
+	<meta name="viewport" content="width=divice-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/destination.css">
+	<title>Destinations</title>
+	<style type="text/css">
+		.container .box .name-text input{
+			position: relative;
+			display: none;
+			background: transparent;
+			border: 1px solid #fff;
+			top: -20px;
+			color: #fff;
+			text-decoration: none;
+			transition: 0.6s ease;
+			text-align: center;
+		}
+		.btn{
+			padding: 5px 40px;
+		}
+		.btn1{
+			margin: 0px -20px;
+			padding: 5px 40px;
+		}
+		.btn2{
+			padding: 5px 60px;
+		}
+		.btn3{
+			padding: 5px 37px;
+			margin: 0px -2px;
+		}
+		.btn4{
+			padding: 5px 50px;
+		}
+		.btn5{
+			padding: 5px 25px;
+		}
+		.container .box:hover .name-text input{
+			display: block;
+			top: -20px;
+		}
+		.container .box .name-text input:hover{
+			background-color: #fff;
+		    color: #000;
+		}
+	</style>
+</head>
+<body>
+	<h1 class="heading">Poupular Destinations</h1>
+	<div class="main">
+        <ul>
+          <ul class="list">
+            <li class="logo"><a href="index.html"></a></li>
+            <div class="search">
+            <div class="search">
+	            <form method="POST" action="https://www.makemytrip.com/book">
+	              <input type="text" name="search_p" placeholder="Search.." size="50">
+	          
+	            </form>
+          	</div>
+          </ul>
+          <ul class="list2">
+            <li><a href="index.html">Home</a></li>
+            
+          </ul>
+        </ul>
+    </div>
+	<div class="container">
+		<div class="box">
+			<div class="imgBox">
+				<img src="IMG-DEST/goa.jpeg" alt="Goa Image" style="width: auto;height: 270px;">
+			</div>
+			<div class="name-text name-pading1 top1">
+				<h1>Goa</h1>
+				<form method="POST" action="https://www.makemytrip.com/book">
+					<input type="submit" name="goa" class="btn1" value="Visit">
+				</form>
+			</div>
+		</div>
+		<div class="box">
+			<div class="imgBox">
+				<img src="IMG-DEST/arunanchal.jpeg" alt=" Image" style="width: auto;height: 270px;">
+			</div>
+			<div class="name-text name-pading2 top1">
+				<h1>Arunachal</h1>
+				<form method="POST" action="https://www.makemytrip.com/book">
+					<input type="submit" name="" class="btn" value="Visit">
+				</form>
+			</div>
+		</div>
+		<div class="box">
+			<div class="imgBox">
+				<img src="IMG-DEST/karnatka.jpeg" alt=" Image">
+			</div>
+			<div class="name-text name-pading3 top1">
+				<h1>Karnataka</h1>
+				<form method="POST" action="https://www.makemytrip.com/book">
+					<input type="submit" name="" class="btn" value="Visit">
+				</form>
+			</div>
+		</div>
+		<div class="box">
+			<div class="imgBox">
+				<img src="IMG-DEST/kerala.jpg" alt=" Image">
+			</div>
+			<div class="name-text name-pading4 top1">
+				<h1>Kerala</h1>
+				<form method="POST" action="https://www.makemytrip.com/book">
+					<input type="submit" name="" class="btn" value="Visit">
+				</form>
+			</div>
+		</div>
+		<div class="box">
+			<div class="imgBox">
+				<img src="IMG-DEST/lakshwadeep.jpeg" alt=" Image">
+			</div>
+			<div class="name-text name-pading5 top2">
+				<h1>Lakshwadeep</h1>
+				<form method="POST" action="https://www.makemytrip.com/book">
+					<input type="submit" name="" class="btn5" value="Visit">
+				</form>
+			</div>
+		</div>
+		<div class="box">
+			<div class="imgBox">
+				<img src="IMG-DEST/sikkim.jpeg" alt=" Image">
+			</div>
+			<div class="name-text name-pading6 top2">
+				<h1> Sikkim</h1>
+				<form method="POST" action="https://www.makemytrip.com/book">
+					<input type="submit" name="" class="btn2" value="Visit">
+				</form>
+			</div>
+		</div>
+		<div class="box">
+			<div class="imgBox">
+				<img src="IMG-DEST/TOKYO.jpeg" alt=" Image">
+			</div>
+			<div class="name-text name-pading7 top2">
+				<h1>Tokyo</h1>
+				<form method="POST" action="https://www.makemytrip.com/book">
+					<input type="submit" name="" class="btn3" value="Visit">
+				</form>
+			</div>
+		</div>
+		<div class="box">
+			<div class="imgBox">
+				<img src="IMG-DEST/BEIJING.jpeg" alt="Image">
+			</div>
+			<div class="name-text name-pading8 top2">
+				<h1>BEIJING</h1>
+				<form method="POST" action="https://www.makemytrip.com/book">
+					<input type="submit" name="" class="btn2" value="Visit">
+				</form>
+			</div>
+		</div>
+		<div class="box">
+			<div class="imgBox">
+				<img src="IMG-DEST/MACAO.jpeg" alt=" Image">
+			</div>
+			<div class="name-text name-pading9 top3">
+				<h1>MACAO</h1>
+				<form method="POST" action="https://www.makemytrip.com/book">
+					<input type="submit" name="" class="btn3" value="Visit">
+				</form>
+			</div>
+		</div>
+		<div class="box">
+			<div class="imgBox">
+				<img src="IMG-DEST/OSAKA.jpeg" alt="">
+			</div>
+			<div class="name-text name-pading10 top3">
+				<h1>OSAKA</h1>
+				<form method="POST" action="https://www.makemytrip.com/book">
+					<input type="submit" name="" class="btn4" value="Visit">
+				</form>
+			</div>
+		</div>
+		<div class="box">
+			<div class="imgBox">
+				<img src="IMG-DEST/KYOTO.jpeg" alt="kyoto Image">
+			</div>
+			<div class="name-text name-pading11 top3">
+				<h1>KYOTO</h1>
+				<form method="POST" action="https://www.makemytrip.com/book">
+					<input type="submit" name="KYOTO" class="btn4" value="Visit">
+				</form>
+			</div>
+		</div>
+		<div class="box">
+			<div class="imgBox">
+				<img src="IMG-DEST/tibet.jpeg" alt="tibet Image">
+			</div>
+			<div class="name-text name-pading12 top3">
+				<h1>Tibet</h1>
+				<form method="POST" action="https://www.makemytrip.com/book">
+					<input type="submit" name="tibet" class="btn2" value="Visit">
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
